@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nedercorpus"
+version = "0.1.0"
+description = "A legal, reproducible, large-scale Dutch text corpus"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+# Minimum for running the full pipeline
+core = [
+    "langdetect>=1.0.9",
+    "pyarrow>=14.0",
+]
+# PDF text extraction (Belgian, Surinamese sources)
+pdf = [
+    "pdfminer.six>=20221105",
+]
+# NER-based PII scrubbing (requires Dutch model: python -m spacy download nl_core_news_lg)
+ner = [
+    "spacy>=3.7",
+]
+# Development and testing
+dev = [
+    "pytest",
+    "pytest-mock",
+]
+# All optional extras
+all = [
+    "nedercorpus[core,pdf,ner]",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pipeline*"]

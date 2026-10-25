@@ -1,0 +1,61 @@
+# ── Secrets ──────────────────────────────────────────────────────────────────
+.env
+*.env
+
+# ── Pipeline data (large; never commit) ──────────────────────────────────────
+data/
+export/
+audit/
+experiment_data/
+compliance/
+logs/
+*.log
+
+# ── Claude Code session data ──────────────────────────────────────────────────
+.claude/
+
+# ── Paper / drafts (not for public repo) ─────────────────────────────────────
+paper/
+
+# ── Session-specific operational scripts and scratch files (not for public repo)
+ops/
+
+# ── Python build artefacts ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Test / coverage ───────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ── OS / editor noise ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.suo
+*.user
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Large model / binary artefacts ───────────────────────────────────────────
+*.bin
+*.gguf
+*.safetensors
+models/
